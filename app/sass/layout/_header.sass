@@ -1,0 +1,94 @@
+.main-head
+  background: linear-gradient(90deg, #3BB8EF 12.59%, #1671D6 57.21%, #0050A9 100%)
+  padding-top: 19px
+  a
+    color: #fff
+  .btn-white
+    padding: 15px 33px 17px
+    font-weight: 500
+    color: #085CB9
+    margin-left: 28px
+
+.user-block
+  display: flex
+  align-items: center
+  .open-search
+    display: inline-block
+    margin-top: 5px
+    .svg
+      +mt(.3s)
+      fill: #fff
+    &:hover
+      .svg
+        fill: darken(#fff, 16%)
+
+.head-logo
+  margin-bottom: 19px
+
+.head-line
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.head-menus
+  width: calc(100% - 293px)
+
+.head-logo
+  width: 239px
+
+.main-mnu
+  font-size: 0
+  li
+    display: inline-block
+    margin-right: 50px
+    &:last-child
+      margin-right: 0
+  a
+    display: inline-block
+    position: relative
+    line-height: 1.15
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 0
+      height: 4px
+      width: 100%
+      background-color: #fff
+      +mt(.3s)
+      opacity: 0
+    &:hover
+      &:after
+        opacity: 1
+
+
+.main-mnu-top
+  a
+    font-size: 18px
+    font-weight: 500
+    padding-bottom: 0
+    &:after
+      bottom: -17px
+
+.main-mnu-bottom
+  a
+    font-size: 16px
+    padding-bottom: 27px
+
+
+.mnu-line-top
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-bottom: 19px
+  border-bottom: 1px solid rgba(#fff, .2)
+
+.mnu-line-bottom
+  padding-top: 26px
+
+.hamburger
+  display: none
+  padding: 0 0 0 30px
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+  background-color: #fff!important

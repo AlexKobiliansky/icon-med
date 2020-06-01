@@ -50,6 +50,7 @@ a:hover, a:active, a:focus
 a
   color: $accent-blue
   text-decoration: none
+  +mt(.3s)
 
 a, li, button
   outline: none!important
@@ -63,4 +64,18 @@ ul
   display: none!important
 // ======= END TEMPLATE STYLES =======
 
+.btn
+  display: inline-block
+  line-height: 1.2
+  padding: 11px 22px 12px
+  text-align: center
+  border-radius: 25px
+  cursor: pointer
+  +mt(.3s)
 
+
+.btn-white
+  background-color: #fff
+  color: $text
+  &:hover
+    background-color: darken(#fff, 6%)
