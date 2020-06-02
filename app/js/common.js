@@ -2,27 +2,21 @@ $(document).ready(function(){
 
     //*** mobile-mnu customization *****//
     var mmenu = $('#mobile-mnu');
-    var menuLogo = mmenu.data("logo");
     var $mmenu = mmenu.mmenu({
-        navbars: [{
-            content: [ "<img src=" + menuLogo + " class=\"img-responsive mm-logo\" alt=\"alt\"/>" ],
-            height: 3
-        }],
         "pageScroll": true,
 
         "navbar": {
             "title" : "",
         },
         "extensions": [
-            "theme-dark",
-            "pagedim-black",
             "position-front",
-            "fx-listitems-slide",
+            "fullscreen",
         ],
     }, {
         offCanvas: {
             pageSelector: "#page-wrapper"
         },
+        "autoHeight": true
     });
 
     var mmenuBtn = $("#mmenu-btn");
@@ -30,10 +24,7 @@ $(document).ready(function(){
 
     mmenuBtn.click(function() {
         API.open();
-        setTimeout(function(){
-            $('.mmenu-btn').addClass('is-active')
-        }, 300);
-
+        $(this).addClass('is-active')
     });
 
     $('#close-mnu').click(function(e){
@@ -41,9 +32,10 @@ $(document).ready(function(){
         API.close();
     });
 
+
     API.bind( "close:start", function() {
         setTimeout(function() {
-            $('.mmenu-btn').removeClass( "is-active" );
+            mmenuBtn.removeClass( "is-active" );
         }, 300);
     });
     //***** end mobile-mnu customization *****//
