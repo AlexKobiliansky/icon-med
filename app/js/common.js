@@ -72,6 +72,19 @@ $(document).ready(function(){
         }, 'xml');
     });
 
+    function heightses() {
+        if ($(window).width()>=480) {
+            $('.imp-item-title').height('auto').equalHeights();
+            $('.imp-item-desc').height('auto').equalHeights();
+        }
+    }
+
+    $(window).resize(function() {
+        heightses();
+    });
+
+    heightses();
+
     //E-mail Ajax Send
     $("form").submit(function() { //Change
         var th = $(this);

@@ -5,6 +5,16 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+
+  .imp-item
+    &-img
+      height: 200px
+      padding: 15px
+    &-label
+      margin-right: 10px
+    &-title
+      font-size: 16px
+
   .head-logo
     width: 200px
 
@@ -17,6 +27,12 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .section-title
+    font-size: 24px
+
+  .imp-item
+    margin-bottom: 30px
 
   .head-logo
     margin-bottom: 0
@@ -55,6 +71,17 @@
 
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .section-title
+    font-size: 22px
+
+  .s-section
+    padding-top: 30px
+
+  .imp-item
+    &-img
+      height: 240px
+
   .head-logo
     width: 140px
 
@@ -65,6 +92,10 @@
     border-radius: 0
 
 @media (max-width: 390px)
+
+  .imp-item
+    &-img
+      height: 150px
 
   .main-head
     padding-top: 15px
