@@ -31,6 +31,28 @@
 // ≥992px
 +media-breakpoint-down(md)
 
+  .foot-wrap
+    flex-wrap: wrap
+
+  .foot-item
+    width: calc(33.3333%)
+
+  .foot-left
+    order: 4
+    width: 50%
+    margin-top: 30px
+
+  .socials
+    order: 5
+    width: 50%
+    margin-top: 30px
+
+  .soc-item
+    margin-left: auto
+
+  .foot-mnu
+    text-align: center
+
   .s-blogs
     padding-top: 20px
     padding-bottom: 20px
@@ -94,6 +116,48 @@
 
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .main-foot
+    padding-top: 40px
+    padding-bottom: 27px
+
+  .foot-left
+    order: 0
+    width: 100%
+    margin-top: 0
+    img
+      margin-left: auto
+      margin-right: auto
+      width: 196px
+      height: auto
+
+  .foot-logo
+    margin-bottom: 20px
+
+  .foot-item
+    width: 100%
+
+  .foot-mnu
+    margin-bottom: 30px
+    h3
+      margin-bottom: 20px
+    li
+      margin-bottom: 20px
+    &-1
+      margin-bottom: 20px
+
+  .socials
+    margin-top: 0
+    margin-bottom: 20px
+    padding: 20px 0 0
+    border-top: 1px solid #E9E9E9
+    border-bottom: 1px solid #E9E9E9
+
+  .soc-item
+    margin-right: auto
+
+  .copyright
+    text-align: center
 
   .s-blogs
     padding-bottom: 50px
