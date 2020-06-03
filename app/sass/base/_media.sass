@@ -6,6 +6,9 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
+  .blog-item
+    height: 280px
+
   .imp-item
     &-img
       height: 200px
@@ -27,6 +30,10 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .s-blogs
+    padding-top: 20px
+    padding-bottom: 20px
 
   .s-double
     padding-top: 20px
@@ -78,9 +85,32 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
+  .blog-item
+    height: 215px
+    padding: 15px
+    &-title
+      font-size: 16px
+
 
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .s-blogs
+    padding-bottom: 50px
+    padding-top: 20px!important
+
+  .blog-item
+    width: 215px
+    padding-right: 8px
+    margin-bottom: 0
+
+  .blogs-slider-wrap
+    position: relative
+    display: block
+    width: calc(100% + 15px)
+
+  .blogs-wrap
+    display: none
 
   .s-double
     padding-top: 10px
@@ -104,7 +134,9 @@
     display: none
 
   .actuals-slider-wrap
+    position: relative
     display: block
+    width: calc(100% + 15px)
 
   .actual-item
     flex-direction: column

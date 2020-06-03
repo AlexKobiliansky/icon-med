@@ -1,0 +1,46 @@
+.s-events
+  padding-bottom: 30px
+
+.event
+  display: flex
+  height: 479px
+  padding: 40px 30px
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-start
+  color: #fff
+  border-radius: 10px
+  +bg-cover
+  span
+    display: inline-block
+  .imp-item-label
+    font-size: 16px
+    padding: 8px 20px
+    margin-right: 10px
+    &.event-label
+      background-color: $accent-green
+  &-title
+    font-size: 25px
+    font-weight: 700
+    margin-bottom: 10px
+    +mt(.3s)
+  &-bottom
+    opacity: .8
+  &:hover
+    color: #fff
+    .event-title
+      color: $accent-blue
+  &-date
+    margin-right: 20px
+  &-time
+    position: relative
+    padding-left: 23px
+    &:before
+      content: ''
+      position: absolute
+      width: 18px
+      height: 18px
+      left: 0
+      top: 3px
+      +bg-cover
+      background-image: url('../img/icons/clock-icon.svg')
