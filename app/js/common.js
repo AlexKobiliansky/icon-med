@@ -109,4 +109,20 @@ $(document).ready(function(){
     });
 
     $('.preloader').fadeOut();
+
+    var playing = false;
+
+    $('#btn-audio').on('click', function(e){
+        e.preventDefault();
+        let audioPlayer = $('#audio-player');
+        $(this).toggleClass('played');
+
+        if (playing === true) {
+            audioPlayer.trigger("pause");
+            playing = false;
+        } else {
+            audioPlayer.trigger("play");
+            playing = true;
+        }
+    })
 });
