@@ -124,9 +124,40 @@
     &-title
       font-size: 16px
 
+  .you-player
+    height: 440px
+
+  .video-popup
+    height: 440px
+
 
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .casts-slider
+    width: calc(100% + 15px)
+
+  .s-casts
+    padding-bottom: 0
+
+  .you-player
+    height: 320px
+
+  .video-popup
+    height: 320px
+
+  .search-form
+    width: 100%
+
+  .cast-item
+    flex-direction: column
+    width: 250px
+    &-img
+      height: 145px
+      width: 100%
+    &-content
+      width: 100%
+      padding: 15px
 
   .audio-title
     font-size: 24px
@@ -255,6 +286,12 @@
     border-radius: 0
 
 @media (max-width: 390px)
+
+  .you-player
+    height: 240px
+
+  .video-popup
+    height: 240px
 
   .s-audio
     padding: 20px 0 40px

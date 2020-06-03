@@ -108,6 +108,25 @@ $(document).ready(function(){
         autoWidth:true,
     });
 
+    $('.casts-slider').owlCarousel({
+        loop:false,
+        items: 1,
+        dots: false,
+        autoHeight: false,
+        navText: ["",""],
+        autoWidth:true,
+        responsive: {
+            0: {
+                nav: false,
+                margin: 8,
+            },
+            1200: {
+                nav: true,
+                margin: 30,
+            }
+        }
+    });
+
     $('.preloader').fadeOut();
 
     var playing = false;
@@ -125,4 +144,76 @@ $(document).ready(function(){
             playing = true;
         }
     })
+
+
+    /**
+     * YOUTUBE SCRIPT
+     */
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var vp;
+
+    // var $videoID = 'yu5TPBX8290';
+    var $playerID = 'videoPlayer-0';
+
+    onYouTubeIframeAPIReady = function () {
+
+
+
+        $("a[href='#video-popup']").on('click', function(){
+
+            console.log('its working!');
+
+            var $videoID = $(this).data("video");
+
+
+            vp = new YT.Player($playerID, {
+                videoId: $videoID,
+                playerVars: {
+                    'autoplay': 1,
+                    'rel': 0,
+                    'showinfo': 0
+                },
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        });
+    };
+
+    onPlayerStateChange = function (event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            console.log('ended');
+            $.magnificPopup.close();
+        }
+    };
+    /**
+     * end YOUTUBE SCRIPT
+     */
+
+
+    $(function () {
+        $("a[href='#video-popup']").magnificPopup({
+            type: "inline",
+            fixedContentPos: !1,
+            fixedBgPos: !0,
+            overflowY: "auto",
+            closeBtnInside: !0,
+            preloader: !1,
+            midClick: !0,
+            removalDelay: 300,
+            mainClass: "popup-zoom-in",
+
+            callbacks: {
+                close: function(){
+                    console.log('closed');
+                    vp.stopVideo();
+                    vp.destroy();
+                }
+            }
+        })
+    });
 });
