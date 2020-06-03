@@ -5,6 +5,12 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+  .ui-datepicker
+    .ui-datepicker-prev, .ui-datepicker-next
+      right: 100px!important
+      top: 5px!important
+    .ui-datepicker-prev
+      left: 100px!important
 
   .blog-item
     height: 280px
@@ -30,6 +36,10 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .event
+    height: 300px
+    margin-bottom: 30px
 
   .audio
     &-wrap
@@ -133,6 +143,67 @@
 
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .calendar-popup
+    width: calc(100% + 30px)
+    right: -15px
+    padding-left: 25px
+    padding-right: 10px
+    &-date
+      font-size: 22px
+      padding-bottom: 30px
+
+  .ev-time, .ev-type
+    font-size: 12px
+    white-space: nowrap
+    margin-bottom: 20px
+
+  .ev
+    padding-bottom: 20px
+    margin-bottom: 20px
+    &-top
+      margin-bottom: 0
+    &-title
+      font-size: 16px
+
+  .calendar-popup-events
+    padding-right: 25px
+
+  .s-events
+    padding-bottom: 0
+
+  .ui-datepicker
+    padding: 10px 0
+    border: none
+    .ui-datepicker-prev, .ui-datepicker-next
+      right: 0!important
+      top: 3px!important
+    .ui-datepicker-prev
+      left: 0!important
+
+  .ui-datepicker .ui-datepicker-calendar tbody td
+    font-size: 18px
+
+  .ui-datepicker-today:before
+    width: 38px
+    height: 38px
+    left: calc(50% - 19px)
+    top: calc(50% - 19px)
+
+  .eventday:before
+    width: 38px
+    height: 38px
+    left: calc(50% - 19px)
+    top: calc(50% - 19px)
+
+
+  .event
+    padding: 15px 17px
+    .imp-item-label
+      padding: 8px 17px
+      margin-bottom: 15px
+    &-title
+      font-size: 18px
 
   .casts-slider
     width: calc(100% + 15px)

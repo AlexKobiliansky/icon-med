@@ -127,6 +127,64 @@ $(document).ready(function(){
         }
     });
 
+    function availableFunction(date) {
+        var availday= $.datepicker.formatDate('yy-mm-dd', date);
+
+        if (jQuery.inArray(availday, availableDates) > -1) {
+            return [true,"eventday",""];
+        } else {
+            return [false,"other",""];
+        }
+    }
+
+    //date-picker custom
+    $( ".calendar" ).datepicker({
+        dayNames: [ "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота" ],
+        dayNamesMin: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пн", "Сб" ],
+        monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
+        monthNamesShort: [ "Янв", "Феф", "Мар", "Апр", "Май", "Инь", "Иль", "Авг", "Сен", "Окт", "Нбр", "Дек" ],
+        dateFormat: "yy-mm-dd",
+        firstDay: 1,
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        onSelect: function(dateText, inst) {
+            var date = $(this).val();
+            // console.log(datavalues[date]);
+
+            eventsArray = datavalues[date];
+
+            var clickedDate = new Date(date)
+            var dateTitle = $.datepicker.formatDate('dd.mm.yy', clickedDate);
+            $('#calendar-popup-date').text(dateTitle);
+
+            eventsArray.map(function(arr){
+
+                var time = arr[0],
+                    type = arr[1],
+                    name = arr[2],
+                    link = arr[3];
+
+                $('#calendar-popup-events').append(
+                "<div class='ev'><div class='ev-top'> <div class='ev-time'><span>"+ time +"</span></div> <div class='ev-type'>"+type+"</div> </div> <a href='"+link+"' class='ev-title'>"+name+"</a> </div>"
+                );
+            })
+
+            $('.calendar-popup-events').mCustomScrollbar({
+                scrollbarPosition: "outside",
+                scrollInertia: 100,
+                // autoDraggerLength: false
+            });
+
+            $('#calendar-popup').show();
+        },
+        beforeShowDay: availableFunction
+    });
+
+    $('.close-calendar').on('click', function(){
+        $('.calendar-popup-events').mCustomScrollbar("destroy").html('');
+        $('#calendar-popup').hide();
+    })
+
     $('.preloader').fadeOut();
 
     var playing = false;
