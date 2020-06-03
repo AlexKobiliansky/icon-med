@@ -1,0 +1,84 @@
+.s-double
+  .section-title-wrap
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    margin-bottom: 36px
+    .btn
+      font-size: 14px
+  .section-title
+    margin-bottom: 0
+    margin-right: 30px
+
+.actual-item
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 20px
+  &:last-child
+    margin-bottom: 0
+  &-img
+    min-height: 110px
+    width: 165px
+    border-radius: 10px
+    +bg-cover
+  &-content
+    width: calc(100% - 180px)
+    display: flex
+    flex-direction: column
+  &-title
+    font-weight: 700
+    margin-bottom: 10px
+    color: $text
+    +mt(.3s)
+  &-date
+    color: rgba($text, .6)
+  &:hover
+    .actual-item-title
+      color: $accent-blue
+
+.news-wrap
+  background-color: #E8F1FB
+  border-radius: 10px
+  padding: 48px 37px 48px 25px
+  margin-bottom: 26px
+
+.news-item
+  padding: 21px 15px 21px 0
+  border-bottom: 1px solid rgba(#393939, .1)
+  &:first-child
+    padding-top: 0
+  &:last-child
+    padding-bottom: 0
+    border: none
+  &-title
+    font-size: 18px
+    color: $text
+    font-weight: 700
+    margin-bottom: 11px
+    display: inline-block
+    &:hover
+      color: $accent-blue
+  &-date
+    font-size: 12px
+    color: rgba(#393939, .7)
+
+.add
+  position: relative
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  align-items: flex-start
+  justify-content: flex-end
+  padding: 25px 20px
+  color: #fff
+  height: 200px
+  border-radius: 10px
+  +bg-cover
+  &-title
+    font-size: 25px
+    font-weight: 700
+    margin-bottom: 5px
+
+.actuals-slider-wrap
+  display: none

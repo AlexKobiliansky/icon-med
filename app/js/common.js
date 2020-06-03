@@ -74,8 +74,8 @@ $(document).ready(function(){
 
     function heightses() {
         if ($(window).width()>=480) {
-            $('.imp-item-title').height('auto').equalHeights();
-            $('.imp-item-desc').height('auto').equalHeights();
+            $('.s-important .imp-item-title').height('auto').equalHeights();
+            $('.s-important .imp-item-desc').height('auto').equalHeights();
         }
     }
 
@@ -84,6 +84,17 @@ $(document).ready(function(){
     });
 
     heightses();
+
+    $('.actuals-slider').owlCarousel({
+        loop:true,
+        nav: false,
+        items: 1,
+        margin: 8,
+        dots: false,
+        autoHeight: false,
+        navText: ["",""],
+        autoWidth:true,
+    });
 
     //E-mail Ajax Send
     $("form").submit(function() { //Change
